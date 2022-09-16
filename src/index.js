@@ -26,3 +26,17 @@ submitButton.addEventListener("click", function () {
   }
   //console.log(document.getElementById("input-admin").checked);
 });
+
+const emptyButton = document.getElementById("empty-table");
+
+emptyButton.addEventListener("click", () => {
+  const users = document.getElementById("users");
+  let oldRows = document.getElementsByTagName("tr");
+  let rowCount = oldRows.length;
+
+  let old_tbody = document.getElementById("tbody");
+  users.removeChild(old_tbody);
+  let new_tbody = document.createElement("tbody");
+  new_tbody.setAttribute("id", "tbody");
+  users.appendChild(new_tbody);
+});
